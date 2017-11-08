@@ -3,6 +3,40 @@
   
     
     <entry>
+      <title><![CDATA[使用七牛图床为博客存储图片]]></title>
+      <url>/2017/11/08/%E4%BD%BF%E7%94%A8%E4%B8%83%E7%89%9B%E5%9B%BE%E5%BA%8A%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%AD%98%E5%82%A8%E5%9B%BE%E7%89%87/</url>
+      <content type="html"><![CDATA[<p>图床一般是指储存图片的服务器，同时允许您把图片通过链接插入到其他网站<br><a id="more"></a><br>国内有很多不错的图床。比如腾讯云，网易蜂巢，七牛云<br>试用了七牛，感觉还是很不错的，有10GB免费存储，每个月10G流量，用做博客图片等资源存储，非常的适合  </p>
+<h4 id="注册七牛云"><a href="#注册七牛云" class="headerlink" title="注册七牛云"></a>注册七牛云</h4><h5 id="首先需要注册七牛云账号"><a href="#首先需要注册七牛云账号" class="headerlink" title="首先需要注册七牛云账号"></a>首先需要<a href="https://portal.qiniu.com/signup?code=3ldl7o056iqtu" target="_blank" rel="external">注册七牛云账号</a></h5><h5 id="创建存储空间"><a href="#创建存储空间" class="headerlink" title="创建存储空间"></a>创建存储空间</h5><p><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171108/3ff93mbJGl.png?imageslim" alt="mark"></p>
+<p>存储空间名称作为唯一的 Bucket 识别符<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171108/2D1fef6gBk.png?imageslim" alt="mark"></p>
+<h5 id="测试域名"><a href="#测试域名" class="headerlink" title="测试域名"></a>测试域名</h5><p>每个存储空间系统都会默认分配一个测试域名，以后上传的图片会挂载在这个域名下面，有条件的最好自己配置一个域名（测试域名限流量限速），此处不做讲解，自行百度<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171108/jadm23gk7A.png?imageslim" alt="mark"></p>
+<h4 id="使用Mpic-图床神器"><a href="#使用Mpic-图床神器" class="headerlink" title="使用Mpic 图床神器"></a>使用Mpic 图床神器</h4><p>MPic是一款针对七牛云存储智能上传图片的图床工具，图片上传,无水印,不压缩图片质量,外链无限制,国内空间绝不会被墙，支持粘贴上传、拖放上传，一键复制 markdown 链接的图床，简单好用，无需注册。  </p>
+<h5 id="下载图床神器"><a href="#下载图床神器" class="headerlink" title="下载图床神器"></a>下载图床神器</h5><p><a href="http://oz1lum573.bkt.clouddn.com/MPic%202.2.1.3.rar" target="_blank" rel="external">图床神器</a></p>
+<h5 id="配置账号信息"><a href="#配置账号信息" class="headerlink" title="配置账号信息"></a>配置账号信息</h5><p>点击设置账号<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171108/AjH1dAK5FJ.png?imageslim" alt="mark">  </p>
+<p>配置账号信息，空间名为七牛账户创建的存储空间名，AccessKey和AecretKey到七牛个人设置，秘钥处获取，域名为创建存储空间时系统分配的测试域名（如果自己配置了域名，则填自己配置好的域名）</p>
+<p><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171108/8FGEJkbkHb.png?imageslim" alt="mark"></p>
+<h4 id="使用图床"><a href="#使用图床" class="headerlink" title="使用图床"></a>使用图床</h4><p>在编辑博客后者其他文档的时候，把图片拖拽到图床神器，图床神器会自动上传并生成网络地址，博客中直接插入地址即可</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 杂项 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 七牛 </tag>
+            
+            <tag> 图床 </tag>
+            
+            <tag> 图床神器 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用ssh公钥实现对远程仓库的无口令访问]]></title>
       <url>/2017/11/08/%E4%BD%BF%E7%94%A8ssh%E5%85%AC%E9%92%A5%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%A0%E5%8F%A3%E4%BB%A4%E8%AE%BF%E9%97%AE/</url>
       <content type="html"><![CDATA[<h4 id="使用ssh公钥实现对远程仓库的无口令访问"><a href="#使用ssh公钥实现对远程仓库的无口令访问" class="headerlink" title="使用ssh公钥实现对远程仓库的无口令访问"></a>使用ssh公钥实现对远程仓库的无口令访问</h4><a id="more"></a>
@@ -118,8 +152,8 @@
   
     
     <entry>
-      <title><![CDATA[links]]></title>
-      <url>/links/index.html</url>
+      <title><![CDATA[gallery]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -130,8 +164,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[gallery]]></title>
-      <url>/gallery/index.html</url>
+      <title><![CDATA[links]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
