@@ -37,7 +37,7 @@
     
     <title>
         
-            vue环境搭建 | 
+            测试二 | 
         
         C-Jimmy个人小站
     </title>
@@ -48,16 +48,8 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="C-Jimmy">
-    <meta name="description" itemprop="description" content="
-github上建立一个仓库
-登录github (923415929@qq.com *)
-新建一个仓库
-本地项目文件夹下运行以下命令  1234567git initgit statusgit add .git commit -m &amp;quot;第一次提交&amp;quot;// 第一次需要绑定github地址git remote add origin https://github.com/cjw923415929/VueDemo1.gitgit push origin master
-
-
-
-">
-    <meta name="keywords" content="C-Jimmy博客,vue,环境配置,git">
+    <meta name="description" itemprop="description" content="这个是测试二">
+    <meta name="keywords" content="C-Jimmy博客">
 
     <!-- Import lsloader -->
     <script>(function(){window.lsloader={jsRunSequence:[],jsnamemap:{},cssnamemap:{}};lsloader.removeLS=function(key){try{localStorage.removeItem(key)}catch(e){}};lsloader.setLS=function(key,val){try{localStorage.setItem(key,val)}catch(e){}};lsloader.getLS=function(key){var val="";try{val=localStorage.getItem(key)}catch(e){val=""}return val};versionString="/*"+(window.materialVersion||"unknownVersion")+"*/";lsloader.clean=function(){try{var keys=[];for(var i=0;i<localStorage.length;i++){keys.push(localStorage.key(i))}keys.forEach(function(key){var data=lsloader.getLS(key);if(window.oldVersion){var remove=window.oldVersion.reduce(function(p,c){return p||data.indexOf("/*"+c+"*/")!==-1},false);if(remove){lsloader.removeLS(key)}}})}catch(e){}};lsloader.clean();lsloader.load=function(jsname,jspath,cssonload,isJs){if(typeof cssonload==="boolean"){isJs=cssonload;cssonload=undefined}isJs=isJs||false;cssonload=cssonload||function(){};var code;code=this.getLS(jsname);if(code&&code.indexOf(versionString)===-1){this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}if(code){var versionNumber=code.split(versionString)[0];if(versionNumber!=jspath){console.log("reload:"+jspath);this.removeLS(jsname);this.requestResource(jsname,jspath,cssonload,isJs);return}code=code.split(versionString)[1];if(isJs){this.jsRunSequence.push({name:jsname,code:code});this.runjs(jspath,jsname,code)}else{document.getElementById(jsname).appendChild(document.createTextNode(code));cssonload()}}else{this.requestResource(jsname,jspath,cssonload,isJs)}};lsloader.requestResource=function(name,path,cssonload,isJs){var that=this;if(isJs){this.iojs(path,name,function(path,name,code){that.setLS(name,path+versionString+code);that.runjs(path,name,code)})}else{this.iocss(path,name,function(code){document.getElementById(name).appendChild(document.createTextNode(code));that.setLS(name,path+versionString+code)},cssonload)}};lsloader.iojs=function(path,jsname,callback){var that=this;that.jsRunSequence.push({name:jsname,code:""});try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(path,jsname,xhr.response);return}}that.jsfallback(path,jsname)}};xhr.send(null)}catch(e){that.jsfallback(path,jsname)}};lsloader.iocss=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.iofonts=function(path,jsname,callback,cssonload){var that=this;try{var xhr=new XMLHttpRequest;xhr.open("get",path,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){callback(xhr.response);cssonload();return}}that.cssfallback(path,jsname,cssonload)}};xhr.send(null)}catch(e){that.cssfallback(path,jsname,cssonload)}};lsloader.runjs=function(path,name,code){if(!!name&&!!code){for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code=code}}}if(!!this.jsRunSequence[0]&&!!this.jsRunSequence[0].code&&this.jsRunSequence[0].status!="failed"){var script=document.createElement("script");script.appendChild(document.createTextNode(this.jsRunSequence[0].code));script.type="text/javascript";document.getElementsByTagName("head")[0].appendChild(script);this.jsRunSequence.shift();if(this.jsRunSequence.length>0){this.runjs()}}else if(!!this.jsRunSequence[0]&&this.jsRunSequence[0].status=="failed"){var that=this;var script=document.createElement("script");script.src=this.jsRunSequence[0].path;script.type="text/javascript";this.jsRunSequence[0].status="loading";script.onload=function(){that.jsRunSequence.shift();if(that.jsRunSequence.length>0){that.runjs()}};document.body.appendChild(script)}};lsloader.tagLoad=function(path,name){this.jsRunSequence.push({name:name,code:"",path:path,status:"failed"});this.runjs()};lsloader.jsfallback=function(path,name){if(!!this.jsnamemap[name]){return}else{this.jsnamemap[name]=name}for(var k in this.jsRunSequence){if(this.jsRunSequence[k].name==name){this.jsRunSequence[k].code="";this.jsRunSequence[k].status="failed";this.jsRunSequence[k].path=path}}this.runjs()};lsloader.cssfallback=function(path,name,cssonload){if(!!this.cssnamemap[name]){return}else{this.cssnamemap[name]=1}var link=document.createElement("link");link.type="text/css";link.href=path;link.rel="stylesheet";link.onload=link.onerror=cssonload;var root=document.getElementsByTagName("script")[0];root.parentNode.insertBefore(link,root)};lsloader.runInlineScript=function(scriptId,codeId){var code=document.getElementById(codeId).innerText;this.jsRunSequence.push({name:scriptId,code:code});this.runjs()};lsloader.loadCombo=function(jslist){var updateList="";var requestingModules={};for(var k in jslist){var LS=this.getLS(jslist[k].name);if(!!LS){var version=LS.split(versionString)[0];var code=LS.split(versionString)[1]}else{var version=""}if(version==jslist[k].path){this.jsRunSequence.push({name:jslist[k].name,code:code,path:jslist[k].path})}else{this.jsRunSequence.push({name:jslist[k].name,code:null,path:jslist[k].path,status:"comboloading"});requestingModules[jslist[k].name]=true;updateList+=(updateList==""?"":";")+jslist[k].path}}var that=this;if(!!updateList){var xhr=new XMLHttpRequest;xhr.open("get",combo+updateList,true);xhr.onreadystatechange=function(){if(xhr.readyState==4){if(xhr.status>=200&&xhr.status<300||xhr.status==304){if(xhr.response!=""){that.runCombo(xhr.response,requestingModules);return}}else{for(var i in that.jsRunSequence){if(requestingModules[that.jsRunSequence[i].name]){that.jsRunSequence[i].status="failed"}}that.runjs()}}};xhr.send(null)}this.runjs()};lsloader.runCombo=function(comboCode,requestingModules){comboCode=comboCode.split("/*combojs*/");comboCode.shift();for(var k in this.jsRunSequence){if(!!requestingModules[this.jsRunSequence[k].name]&&!!comboCode[0]){this.jsRunSequence[k].status="comboJS";this.jsRunSequence[k].code=comboCode[0];this.setLS(this.jsRunSequence[k].name,this.jsRunSequence[k].path+versionString+comboCode[0]);comboCode.shift()}}this.runjs()}})();</script>
@@ -239,42 +231,26 @@ github上建立一个仓库
     <!-- The Open Graph protocol -->
     <meta property="og:url" content="https://c-jimmy.github.io">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="vue环境搭建 | C-Jimmy个人小站">
+    <meta property="og:title" content="测试二 | C-Jimmy个人小站">
     <meta property="og:image" content="https://c-jimmy.github.io/img/favicon.png" />
-    <meta property="og:description" content="
-github上建立一个仓库
-登录github (923415929@qq.com *)
-新建一个仓库
-本地项目文件夹下运行以下命令  1234567git initgit statusgit add .git commit -m &amp;quot;第一次提交&amp;quot;// 第一次需要绑定github地址git remote add origin https://github.com/cjw923415929/VueDemo1.gitgit push origin master
-
-
-
-">
-    <meta property="og:article:tag" content="vue"> <meta property="og:article:tag" content="环境配置"> <meta property="og:article:tag" content="git"> 
+    <meta property="og:description" content="这个是测试二">
+    
 
     
-        <meta property="article:published_time" content="Tue Nov 07 2017 17:35:03 GMT+0800" />
-        <meta property="article:modified_time" content="Tue Nov 07 2017 18:46:41 GMT+0800" />
+        <meta property="article:published_time" content="Wed Nov 08 2017 16:21:17 GMT+0800" />
+        <meta property="article:modified_time" content="Wed Nov 08 2017 16:36:08 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
-    <meta name="twitter:title" content="vue环境搭建 | C-Jimmy个人小站">
-    <meta name="twitter:description" content="
-github上建立一个仓库
-登录github (923415929@qq.com *)
-新建一个仓库
-本地项目文件夹下运行以下命令  1234567git initgit statusgit add .git commit -m &amp;quot;第一次提交&amp;quot;// 第一次需要绑定github地址git remote add origin https://github.com/cjw923415929/VueDemo1.gitgit push origin master
-
-
-
-">
+    <meta name="twitter:title" content="测试二 | C-Jimmy个人小站">
+    <meta name="twitter:description" content="这个是测试二">
     <meta name="twitter:image" content="https://c-jimmy.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://c-jimmy.github.io" />
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html" />
+        <link rel="canonical" href="https://c-jimmy.github.io/2017/11/08/测试二/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -286,10 +262,10 @@ github上建立一个仓库
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html",
-    "headline": "vue环境搭建",
-    "datePublished": "Tue Nov 07 2017 17:35:03 GMT+0800",
-    "dateModified": "Tue Nov 07 2017 18:46:41 GMT+0800",
+    "mainEntityOfPage": "https://c-jimmy.github.io/2017/11/08/测试二/index.html",
+    "headline": "测试二",
+    "datePublished": "Wed Nov 08 2017 16:21:17 GMT+0800",
+    "dateModified": "Wed Nov 08 2017 16:36:08 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -307,16 +283,8 @@ github上建立一个仓库
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",vue,环境配置,gitC-Jimmy博客",
-    "description": "
-github上建立一个仓库
-登录github (923415929@qq.com *)
-新建一个仓库
-本地项目文件夹下运行以下命令  1234567git initgit statusgit add .git commit -m &amp;quot;第一次提交&amp;quot;// 第一次需要绑定github地址git remote add origin https://github.com/cjw923415929/VueDemo1.gitgit push origin master
-
-
-
-",
+    "keywords": "C-Jimmy博客",
+    "description": "这个是测试二",
 }
 </script>
 
@@ -381,7 +349,7 @@ github上建立一个仓库
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#github上建立一个仓库"><span class="post-toc-number">1.</span> <span class="post-toc-text">github上建立一个仓库</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#搭建环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">搭建环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装nodejs环境-nodejs-org下载安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">安装nodejs环境(nodejs.org下载安装)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装git客户端（git-for-windows，下载并安装）"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装git客户端（git-for-windows，下载并安装）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装cnpm环境"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">安装cnpm环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：-git-bash-相当于一个美化后的命令行窗口"><span class="post-toc-number">2.3.1.</span> <span class="post-toc-text"> 注意： git bash 相当于一个美化后的命令行窗口 </span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装bower环境"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">安装bower环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：-bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行-bower-info-vue-即可。其中vue可替换成任意的包"><span class="post-toc-number">2.4.1.</span> <span class="post-toc-text"> 注意： bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行 bower info vue 即可。其中vue可替换成任意的包</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#安装vue-cli脚手架环境"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">安装vue-cli脚手架环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用vue-cli脚手架构建一个项目"><span class="post-toc-number">3.</span> <span class="post-toc-text">使用vue-cli脚手架构建一个项目</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入-convert-fs-ntfs-，其中-代表需要转换的磁盘-；"><span class="post-toc-number">3.0.1.</span> <span class="post-toc-text"> 注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入 convert *:/fs:ntfs ，其中* 代表需要转换的磁盘 ；</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装常用模块"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装常用模块</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#配置webpack-config-js"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置webpack.config.js</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#这个是测试二"><span class="post-toc-number">1.</span> <span class="post-toc-text">这个是测试二</span></a></li></ol>
     </ul>
     
 
@@ -413,7 +381,7 @@ github上建立一个仓库
         
     
             <p class="article-headline-p">
-                vue环境搭建
+                测试二
             </p>
         </div>
 
@@ -432,7 +400,7 @@ github上建立一个仓库
     <!-- Author Name & Date -->
     <div>
         <strong>C-Jimmy</strong>
-        <span>11月 07, 2017</span>
+        <span>11月 08, 2017</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -454,22 +422,13 @@ github上建立一个仓库
 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-qrcode-button">
     <li class="mdl-menu__item">在其它设备中阅读本文章</li>
     
-        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://c-jimmy.github.io/2017/11/07/vue环境搭建/">
+        <img src="https://pan.baidu.com/share/qrcode?w=246&h=246&url=https://c-jimmy.github.io/2017/11/08/测试二/">
     
 </ul>
 
     
 
     <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/git/">git</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/vue/">vue</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/环境配置/">环境配置</a>
-    </ul>
     
 
     <!-- Share -->
@@ -485,7 +444,7 @@ github上建立一个仓库
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=vue环境搭建&url=https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html&pic=https://c-jimmy.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=测试二&url=https://c-jimmy.github.io/2017/11/08/测试二/index.html&pic=https://c-jimmy.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -494,7 +453,7 @@ github上建立一个仓库
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=vue环境搭建&url=https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html&via=C-Jimmy" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=测试二&url=https://c-jimmy.github.io/2017/11/08/测试二/index.html&via=C-Jimmy" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -503,7 +462,7 @@ github上建立一个仓库
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://c-jimmy.github.io/2017/11/08/测试二/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -512,7 +471,7 @@ github上建立一个仓库
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://c-jimmy.github.io/2017/11/07/vue环境搭建/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://c-jimmy.github.io/2017/11/08/测试二/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -537,34 +496,8 @@ github上建立一个仓库
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <ul>
-<li><h4 id="github上建立一个仓库"><a href="#github上建立一个仓库" class="headerlink" title="github上建立一个仓库"></a>github上建立一个仓库</h4><ul>
-<li>登录github (923415929@qq.com <strong>*</strong>)</li>
-<li>新建一个仓库</li>
-<li>本地项目文件夹下运行以下命令  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git status</div><div class="line">git add .</div><div class="line">git commit -m &quot;第一次提交&quot;</div><div class="line">// 第一次需要绑定github地址</div><div class="line">git remote add origin https://github.com/cjw923415929/VueDemo1.git</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><h4 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h4><ul>
-<li><h5 id="安装nodejs环境-nodejs-org下载安装"><a href="#安装nodejs环境-nodejs-org下载安装" class="headerlink" title="安装nodejs环境(nodejs.org下载安装)"></a>安装nodejs环境(nodejs.org下载安装)</h5></li>
-<li><h5 id="安装git客户端（git-for-windows，下载并安装）"><a href="#安装git客户端（git-for-windows，下载并安装）" class="headerlink" title="安装git客户端（git-for-windows，下载并安装）"></a>安装git客户端（git-for-windows，下载并安装）</h5></li>
-<li><h5 id="安装cnpm环境"><a href="#安装cnpm环境" class="headerlink" title="安装cnpm环境"></a>安装cnpm环境</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">// 安装好&quot;git for window&quot;后，在任何文件夹下右击空白处，打开&quot;git bash&quot;</div><div class="line"></div><div class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</div></pre></td></tr></table></figure>
-<h6 id="注意：-git-bash-相当于一个美化后的命令行窗口"><a href="#注意：-git-bash-相当于一个美化后的命令行窗口" class="headerlink" title=" 注意： git bash 相当于一个美化后的命令行窗口 "></a><strong> 注意： git bash 相当于一个美化后的命令行窗口 </strong></h6></li>
-<li><h5 id="安装bower环境"><a href="#安装bower环境" class="headerlink" title="安装bower环境"></a>安装bower环境</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm install bower -g</div></pre></td></tr></table></figure>
-<h6 id="注意：-bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行-bower-info-vue-即可。其中vue可替换成任意的包"><a href="#注意：-bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行-bower-info-vue-即可。其中vue可替换成任意的包" class="headerlink" title=" 注意： bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行 bower info vue 即可。其中vue可替换成任意的包"></a><strong> 注意： bower不是必须安装的包，bower用来查看其它包的版本非常的方便，安装后执行 bower info vue 即可。其中vue可替换成任意的包</strong></h6></li>
-<li><h5 id="安装vue-cli脚手架环境"><a href="#安装vue-cli脚手架环境" class="headerlink" title="安装vue-cli脚手架环境"></a>安装vue-cli脚手架环境</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">// i = install, g = global </div><div class="line">cnpm i vue-cli -g</div></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><h4 id="使用vue-cli脚手架构建一个项目"><a href="#使用vue-cli脚手架构建一个项目" class="headerlink" title="使用vue-cli脚手架构建一个项目"></a>使用vue-cli脚手架构建一个项目</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 安装webpack-simple 类型的项目结构</div><div class="line">vue init webpack-simple vue-demo1</div><div class="line">// 进入vue-demo1模块</div><div class="line">cd vue-demo1</div><div class="line">// 安装项目依赖</div><div class="line">cnpm install</div><div class="line">// 运行项目</div><div class="line">npm run dev</div></pre></td></tr></table></figure>
-<h6 id="注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入-convert-fs-ntfs-，其中-代表需要转换的磁盘-；"><a href="#注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入-convert-fs-ntfs-，其中-代表需要转换的磁盘-；" class="headerlink" title=" 注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入 convert *:/fs:ntfs ，其中* 代表需要转换的磁盘 ；"></a><strong> 注意：国内建议使用cnpm安装依赖，如果总是安装失败，请检查磁盘类型是不是fat32的，如果是，请转为ntfs类型再执行安装依赖操作。转换方式，命令行输入 convert *:/fs:ntfs ，其中* 代表需要转换的磁盘 </strong>；</h6></li>
-<li><h4 id="安装常用模块"><a href="#安装常用模块" class="headerlink" title="安装常用模块"></a>安装常用模块</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 安装vuex, 以--save方式安装</div><div class="line">cnpm i vuex -S</div><div class="line">// 安装style-loader, 以--save-dev方式安装</div><div class="line">cnpm i style -D</div></pre></td></tr></table></figure>
-</li>
-<li><h4 id="配置webpack-config-js"><a href="#配置webpack-config-js" class="headerlink" title="配置webpack.config.js"></a>配置webpack.config.js</h4>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.css$/,</div><div class="line">    loader: &apos;style-loader!css-loader&apos;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure></li>
-</ul>
+        <h2 id="这个是测试二"><a href="#这个是测试二" class="headerlink" title="这个是测试二"></a>这个是测试二</h2><a id="more"></a>
+<p>这个是折叠内容</p>
 
         
     
@@ -585,7 +518,7 @@ github上建立一个仓库
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2017/11/08/测试/" id="post_nav-newer" class="prev-content">
+        <a href="/2017/11/08/测试三/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -599,7 +532,7 @@ github上建立一个仓库
 
     <!-- Next Nav -->
     
-        <a href="/2017/11/07/hello-world/" id="post_nav-older" class="next-content">
+        <a href="/2017/11/08/测试/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
