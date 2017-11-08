@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[使用ssh公钥实现对远程仓库的无口令访问]]></title>
+      <url>/2017/11/08/%E4%BD%BF%E7%94%A8ssh%E5%85%AC%E9%92%A5%E5%AE%9E%E7%8E%B0%E5%AF%B9%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E6%97%A0%E5%8F%A3%E4%BB%A4%E8%AE%BF%E9%97%AE/</url>
+      <content type="html"><![CDATA[<h4 id="使用ssh公钥实现对远程仓库的无口令访问"><a href="#使用ssh公钥实现对远程仓库的无口令访问" class="headerlink" title="使用ssh公钥实现对远程仓库的无口令访问"></a>使用ssh公钥实现对远程仓库的无口令访问</h4><a id="more"></a>
+<blockquote>
+<p>当一个主机对应多个远程仓库账户时，使用https协议 ( github、 码云、bitbucket等远程仓库都支持https协议和SSH协议 ) 进行仓库的克隆、上传时，每次都需要输入当前远程仓库账户的用户名和密码，这时候可以使用SSH协议实现对远程仓库的无口令访问，使用SSH协议需要主机生成ssh-keys文件，然后把这个ssh-keys配置到你的远程账户下方可使用</p>
+</blockquote>
+<ul>
+<li><p>在 Git Base 中运行以下命令生成本机公钥与私钥（没有git base 的先百度下载安装“git for windows”）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen</div></pre></td></tr></table></figure>
+</li>
+<li><p>找到刚才所生成的公钥（默认放在：<code>/c/Users/Administrator/.ssh/</code>文件夹下，其中<code>id_rsa</code>为私钥，<code>id_rsa.pub</code>为公钥，这里需要使用的是公钥）</p>
+</li>
+<li>用编辑器打开公钥<code>id_rsa.pub</code>，复制里面的内容</li>
+<li>登录你的远程仓库账户（github、bitbucket、码云） -&gt; 设置（settings） -&gt; SSH公钥（SSH and GPG keys）-&gt; 添加公钥（New SSH key）</li>
+<li>在公钥（key）处粘贴刚才复制好的代码，标题（Title）可以自定义，如“company/home….”</li>
+<li>点击确定（Add SSH key）后。需要再次验证当前账户的密码<blockquote>
+<p>注意：使用远程仓库的时候，需要使用SSH协议地址; 生成的一个公钥，可以放在多个远程账户上使用；同时一般远程仓库都可以存放多个公钥</p>
+</blockquote>
+</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> 杂项 </category>
+            
+            <category> SSH </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> ssh </tag>
+            
+            <tag> 公钥 </tag>
+            
+            <tag> 无口令访问 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[vue环境搭建]]></title>
       <url>/2017/11/07/vue%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
       <content type="html"><![CDATA[<ul>
@@ -76,12 +120,6 @@
   
     
     <entry>
-      <title><![CDATA[gallery]]></title>
-      <url>/gallery/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[links]]></title>
       <url>/links/index.html</url>
       <content type="html"></content>
@@ -90,6 +128,12 @@
     <entry>
       <title><![CDATA[about]]></title>
       <url>/about/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gallery]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
