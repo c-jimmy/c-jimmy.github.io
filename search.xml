@@ -3,6 +3,36 @@
   
     
     <entry>
+      <title><![CDATA[keep-alive缓存组件]]></title>
+      <url>/2017/11/13/keep-alive%E7%BC%93%E5%AD%98%E7%BB%84%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>vue2.0提供了一个keep-alive组件<br>用来缓存组件,避免多次加载相应的组件,减少性能消耗<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">component</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 组件将被缓存 --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>有时候 可能需要缓存整个站点的所有页面,将首次触发请求写在created钩子函数中,就能实现缓存,比如列表页,去了详情页 回来,还是在原来的页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h4 id="缓存部分组件"><a href="#缓存部分组件" class="headerlink" title="缓存部分组件"></a>缓存部分组件</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//所有商铺列表页,此组件设置了meta项，其中keepAlive值为true</span></div><div class="line">&#123;</div><div class="line">    path: <span class="string">'/msite'</span>,</div><div class="line">    component: msite,</div><div class="line">    meta: &#123; <span class="attr">keepAlive</span>: <span class="literal">true</span> &#125;,</div><div class="line">&#125;,</div><div class="line"><span class="comment">//特色商铺列表页</span></div><div class="line">&#123;</div><div class="line">    path: <span class="string">'/food'</span>,</div><div class="line">    component: food</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--检测组件路由中‘$route.meta.keepAlive’的值，为真的时候，使用&lt;keep-alive&gt;缓存组件，同时为组件添加效果--&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"router-fade"</span> <span class="attr">mode</span>=<span class="string">"out-in"</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    	<span class="comment">&lt;!--需要keepalive缓存的--&gt;</span></div><div class="line">	    <span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"$route.meta.keepAlive"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">transition</span> <span class="attr">name</span>=<span class="string">"router-fade"</span> <span class="attr">mode</span>=<span class="string">"out-in"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!--不需要keepalive缓存的--&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">router-view</span> <span class="attr">v-if</span>=<span class="string">"!$route.meta.keepAlive"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">transition</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="动态判断是否缓存"><a href="#动态判断是否缓存" class="headerlink" title="动态判断是否缓存"></a>动态判断是否缓存</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span> <span class="attr">:include</span>=<span class="string">"includedComponents"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">router-view</span>&gt;</span><span class="tag">&lt;/<span class="name">router-view</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">data () &#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        includedComponents: [Home, Login] <span class="comment">//类型为数组，里面为需要缓存的组件名称</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+]]></content>
+      
+        <categories>
+            
+            <category> vue </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> keep-alive </tag>
+            
+            <tag> 缓存组件 </tag>
+            
+            <tag> vue性能优化 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[git bash 中文乱码问题]]></title>
       <url>/2017/11/09/git-bash-%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>windows下运行<code>git bash</code>时，经常出现中文乱码问题<br><a id="more"></a><br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171109/dakDhHb664.png?imageslim" alt="mark"></p>
@@ -162,8 +192,8 @@
   
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
+      <title><![CDATA[links]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -174,8 +204,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[links]]></title>
-      <url>/links/index.html</url>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     
