@@ -3,6 +3,66 @@
   
     
     <entry>
+      <title><![CDATA[js this关键字]]></title>
+      <url>/2017/11/30/js-this%E5%85%B3%E9%94%AE%E5%AD%97/</url>
+      <content type="html"><![CDATA[<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><blockquote>
+<ul>
+<li><strong>它代表==函数运行时==，==自动生成==的一个==内部对象==，只能在==内部==使用</strong></li>
+<li><strong>谁调用它，this就指向谁</strong></li>
+</ul>
+</blockquote>
+<h4 id="分四种情况"><a href="#分四种情况" class="headerlink" title="分四种情况"></a>分四种情况</h4><ul>
+<li><h5 id="纯粹的函数调用"><a href="#纯粹的函数调用" class="headerlink" title="纯粹的函数调用"></a>纯粹的函数调用</h5><blockquote>
+<p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123; </div><div class="line">    <span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line">    alert(x);       <span class="comment">// 2</span></div><div class="line">    alert(<span class="keyword">this</span>.x);  <span class="comment">// 1</span></div><div class="line">    </div><div class="line">    <span class="keyword">this</span>.x = <span class="number">0</span>;</div><div class="line">    alert(x);       <span class="comment">// 2</span></div><div class="line">    alert(<span class="keyword">this</span>.x);  <span class="comment">// 0</span></div><div class="line">&#125; </div><div class="line">test(); </div><div class="line">alert(x);           <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="作为对象方法的调用"><a href="#作为对象方法的调用" class="headerlink" title="作为对象方法的调用"></a>作为对象方法的调用</h5><blockquote>
+<p>函数还可以作为某个对象的方法调用，这时this就指这个上级对象。</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>).x;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">o.x = <span class="number">1</span>;</div><div class="line">o.m = test; <span class="comment">// 将函数test作为对象o的一个方法；</span></div><div class="line">o.m();      <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="作为构造函数调用"><a href="#作为构造函数调用" class="headerlink" title="作为构造函数调用"></a>作为构造函数调用</h5><blockquote>
+<p>函数作为构造函数new 出一个新对象（object）,这时，this指向这个生成的新对象</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> Test();</div><div class="line">alert(x);   <span class="comment">// 2 表明去全局变量x的值没有变</span></div></pre></td></tr></table></figure>
+<ul>
+<li><h5 id="apply调用"><a href="#apply调用" class="headerlink" title="apply调用"></a>apply调用</h5><blockquote>
+<p><strong>apply/call记忆方法：</strong><br>猫吃鱼，狗吃肉，奥特曼打小怪兽。<br>有天狗想吃鱼了<br>猫.吃鱼.call(狗，鱼)<br>狗就吃到鱼了<br>猫成精了，想打怪兽<br>奥特曼.打小怪兽.call(猫，小怪兽)</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">obj.x = <span class="number">1</span>;</div><div class="line">obj.m = test;</div><div class="line">obj.m.apply();      <span class="comment">// 0 apply()的参数为空时，默认调用全局对象。</span></div><div class="line">obj.m.apply(obj);   <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>参考文章<br><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html" target="_blank" rel="external">Javascript的this用法</a><br><a href="https://www.zhihu.com/question/20289071" target="_blank" rel="external">如何理解和熟练运用js中的call及apply</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> javascript </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> this </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[keep-alive缓存组件]]></title>
       <url>/2017/11/13/keep-alive%E7%BC%93%E5%AD%98%E7%BB%84%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><p>vue2.0提供了一个keep-alive组件<br>用来缓存组件,避免多次加载相应的组件,减少性能消耗<br><a id="more"></a><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">keep-alive</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">component</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 组件将被缓存 --&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">component</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">keep-alive</span>&gt;</span></div></pre></td></tr></table></figure></p>
@@ -192,8 +252,8 @@
   
     
     <entry>
-      <title><![CDATA[links]]></title>
-      <url>/links/index.html</url>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -204,8 +264,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
+      <title><![CDATA[links]]></title>
+      <url>/links/index.html</url>
       <content type="html"></content>
     </entry>
     
