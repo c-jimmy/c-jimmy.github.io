@@ -8,10 +8,11 @@
       <content type="html"><![CDATA[<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><blockquote>
 <ul>
 <li><strong>它代表==函数运行时==，==自动生成==的一个==内部对象==，只能在==内部==使用</strong></li>
-<li><strong>谁调用它，this就指向谁</strong></li>
+<li><strong>谁调用它，this就指向谁</strong><a id="more"></a>
+<h4 id="分四种情况"><a href="#分四种情况" class="headerlink" title="分四种情况"></a>分四种情况</h4></li>
 </ul>
 </blockquote>
-<h4 id="分四种情况"><a href="#分四种情况" class="headerlink" title="分四种情况"></a>分四种情况</h4><ul>
+<ul>
 <li><h5 id="纯粹的函数调用"><a href="#纯粹的函数调用" class="headerlink" title="纯粹的函数调用"></a>纯粹的函数调用</h5><blockquote>
 <p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。</p>
 </blockquote>
