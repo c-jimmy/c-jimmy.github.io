@@ -241,7 +241,7 @@
 
     
         <meta property="article:published_time" content="Sat Dec 02 2017 14:17:13 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Dec 02 2017 14:19:55 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 02 2017 17:30:28 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -268,7 +268,7 @@
     "mainEntityOfPage": "https://c-jimmy.github.io/2017/12/02/jQuery-源码分析（一）：闭包与构建原理/index.html",
     "headline": "jQuery 源码分析（一）：闭包与构建原理",
     "datePublished": "Sat Dec 02 2017 14:17:13 GMT+0800",
-    "dateModified": "Sat Dec 02 2017 14:19:55 GMT+0800",
+    "dateModified": "Sat Dec 02 2017 17:30:28 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -305,68 +305,11 @@
     <!-- 加载highlight.js -->
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
     <script src="http://cdn.bootcss.com/highlight.js/9.1.0/languages/vbscript.min.js" ></script>
-    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
 
     <script>
         // highlight
         hljs.initHighlightingOnLoad();
-
-        // 添加行号
-        $('pre code').each(function(i, block) {
-        //hljs.highlightBlock(block);
-        var lines = $(this).text().split('\n').length - 1;
-        var $numbering = $('<ul/>').addClass('pre-numbering');
-        $(this)
-        .addClass('has-numbering')
-        .parent()
-        .append($numbering);
-        for(i=1;i<=lines;i++){
-            $numbering.append($('<li/>').text(i));
-        }
-        });
     </script>
-
-    <style>
-        code.has-numbering {
-          margin-left: 10px;
-          word-wrap: normal;
-          word-break: keep-all;
-          white-space: pre;
-
-          overflow-x: auto;
-          overflow-y: auto;
-          word-break: keep-all;
-          white-space: pre;
-        }
-
-        .pre-numbering {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 20px;
-          height: 100%;
-          padding: .5em 0.2em .5em 0;
-          border-right: 1px solid #C3CCD0;
-          border-radius: 3px 0 0 3px;
-          background-color: #EEE;
-          text-align: right;
-          font-size: 1.0em;
-          color: #AAA;
-          list-style: none;
-
-        }
-
-        @media (max-width: 767px) {
-              .pre-numbering {
-                display: none;
-            }
-            .has-numbering {
-                margin-left: -10px !important;
-                word-wrap: break-world !important;
-                white-space: pre-wrap !important;
-            }
-        }
-    </style>
 
 </head>
 
@@ -575,7 +518,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h4 id="jQuery-的闭包结构"><a href="#jQuery-的闭包结构" class="headerlink" title="jQuery 的闭包结构"></a>jQuery 的闭包结构</h4><p>jQuery中的代码，都被包含在了一个立即执行函数里面，为了不污染外部的全局作用域，只暴露出了$ 和jQuery这两个变量<br><a id="more"></a></p>
-<pre><code class="js">(function(window, undefined){
+<pre><code class="JavaScript">(function(window, undefined){
     // jquery 具体内容
 })(window)    // 立即执行函数方式
 </code></pre>
@@ -585,7 +528,7 @@
 <li>压缩代码时可以进行优化<br> 将window作为参数传入，可以在代码压缩时候进行优化，例如：<code>(function(w,n){}){window}; // window 被优化成 w</code>。 如果没有传入window参数，那么jquery内部所有window都必须全称，才能按照作用域链访问到全局作用域下的window对象</li>
 </ol>
 <p><strong>为什么要传入undefined?</strong><br>ES5之前，js有个bug, undefined能够被重写；<br>传入undefined的作用；就算外面的人把 undefined 定义了，里面的 undefined 依然不受影响。大概是为了最大程度防止外界的变量定义对所做封装的内部造成影响。</p>
-<pre><code class="js">// 1.演示下不传入undefined 容易出现的bug
+<pre><code class="JavaScript">// 1.演示下不传入undefined 容易出现的bug
 var undefined = 8;  // 假设外部undefined 被程序员重写了
 
 (function(window) {   
@@ -603,7 +546,7 @@ var undefinde = 8;  // 假设外部undefined 被程序员重写了
 <p><strong>jQuery框架的核心就是从HTML文档中匹配元素并对其执行操作。</strong>  </p>
 </blockquote>
 <p>我们是用jQuery实例化一个jQuery对象的时候</p>
-<pre><code class="js">// 无 new 结构
+<pre><code class="JavaScript">// 无 new 结构
 $(&#39;#test&#39;).html(&#39;jQuery源码分析&#39;);
 
 // 我们也可以使用 new 结构
@@ -612,7 +555,7 @@ test.html(&#39;jQuery源码分析&#39;)
 </code></pre>
 <p>大部分人使用 jQuery 的时候都是使用第一种无 new 的构造方式，直接 $(‘’) 进行构造，这也是 jQuery 十分便捷的一个地方。当我们使用第一种无 new 构造方式的时候，其本质就是相当于 new jQuery()，那么在 jQuery 内部是如何实现的呢？  </p>
 <p>要实现这一点，最直接的思路就是在构造函数jQuery内，直接 return 一个实例对象</p>
-<pre><code class="js">var jQuery = function(){
+<pre><code class="JavaScript">var jQuery = function(){
     return new jQuery()
 }
 jQuery.prototype = {
@@ -621,7 +564,7 @@ jQuery.prototype = {
 </code></pre>
 <p>但是这样操作的话，就会出现死循环，一调用jQuery()就new一个对象，new对象的时候，又需要调jQuery()…..  </p>
 <p>最简单的解决方法就是借用了一个构造函数：</p>
-<pre><code class="js">var jQuery = function(){
+<pre><code class="JavaScript">var jQuery = function(){
     return new init;        // 当调用jQuery的时候，返回一个init的实例
 }
 
@@ -631,7 +574,7 @@ init.prototype = {
 }
 </code></pre>
 <p>jQuery作者或许因为代码洁癖的原因（jquery的方法定义在 init.prototype 中）；采用了另一种更加优雅的方式</p>
-<pre><code class="js">var jQuery = function() {
+<pre><code class="JavaScript">var jQuery = function() {
     // new 一个存放在jQuery原型对象上的init()方法实例
     return new jQuery.prototype.init();
 }

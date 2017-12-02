@@ -247,7 +247,7 @@
 
     
         <meta property="article:published_time" content="Thu Nov 30 2017 17:00:52 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Dec 02 2017 14:30:18 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 02 2017 17:29:27 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -277,7 +277,7 @@
     "mainEntityOfPage": "https://c-jimmy.github.io/2017/11/30/js-this关键字/index.html",
     "headline": "js this关键字",
     "datePublished": "Thu Nov 30 2017 17:00:52 GMT+0800",
-    "dateModified": "Sat Dec 02 2017 14:30:18 GMT+0800",
+    "dateModified": "Sat Dec 02 2017 17:29:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -317,68 +317,11 @@
     <!-- 加载highlight.js -->
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
     <script src="http://cdn.bootcss.com/highlight.js/9.1.0/languages/vbscript.min.js" ></script>
-    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
 
     <script>
         // highlight
         hljs.initHighlightingOnLoad();
-
-        // 添加行号
-        $('pre code').each(function(i, block) {
-        //hljs.highlightBlock(block);
-        var lines = $(this).text().split('\n').length - 1;
-        var $numbering = $('<ul/>').addClass('pre-numbering');
-        $(this)
-        .addClass('has-numbering')
-        .parent()
-        .append($numbering);
-        for(i=1;i<=lines;i++){
-            $numbering.append($('<li/>').text(i));
-        }
-        });
     </script>
-
-    <style>
-        code.has-numbering {
-          margin-left: 10px;
-          word-wrap: normal;
-          word-break: keep-all;
-          white-space: pre;
-
-          overflow-x: auto;
-          overflow-y: auto;
-          word-break: keep-all;
-          white-space: pre;
-        }
-
-        .pre-numbering {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 20px;
-          height: 100%;
-          padding: .5em 0.2em .5em 0;
-          border-right: 1px solid #C3CCD0;
-          border-radius: 3px 0 0 3px;
-          background-color: #EEE;
-          text-align: right;
-          font-size: 1.0em;
-          color: #AAA;
-          list-style: none;
-
-        }
-
-        @media (max-width: 767px) {
-              .pre-numbering {
-                display: none;
-            }
-            .has-numbering {
-                margin-left: -10px !important;
-                word-wrap: break-world !important;
-                white-space: pre-wrap !important;
-            }
-        }
-    </style>
 
 </head>
 
@@ -599,7 +542,7 @@
 </blockquote>
 </li>
 </ul>
-<pre><code class="js">var x = 1;
+<pre><code class="JavaScript">var x = 1;
 function test () { 
     var x = 2;
     alert(x);       // 2
@@ -618,7 +561,7 @@ alert(x);           // 0
 </blockquote>
 </li>
 </ul>
-<pre><code class="js">function test () {
+<pre><code class="JavaScript">function test () {
     alert(this).x;
 }
 
@@ -633,7 +576,7 @@ o.m();      // 1
 </blockquote>
 </li>
 </ul>
-<pre><code class="js">var x = 2;
+<pre><code class="JavaScript">var x = 2;
 function Test() {
     this.x = 1;
 }
@@ -649,7 +592,7 @@ alert(x);   // 2 表明去全局变量x的值没有变
 <blockquote>
 <p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数。</p>
 </blockquote>
-<pre><code class="js">var x = 0;
+<pre><code class="JavaScript">var x = 0;
 function test () {
     alert(this.x);
 }
