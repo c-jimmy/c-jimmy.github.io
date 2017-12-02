@@ -245,7 +245,7 @@ jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进�
 
     
         <meta property="article:published_time" content="Sat Dec 02 2017 19:25:50 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Dec 02 2017 19:33:01 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 02 2017 19:37:20 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@ jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进�
     "mainEntityOfPage": "https://c-jimmy.github.io/2017/12/02/jQuery-源码分析（二）：jQuery核心函数/index.html",
     "headline": "jQuery-源码分析（二）：jQuery核心函数",
     "datePublished": "Sat Dec 02 2017 19:25:50 GMT+0800",
-    "dateModified": "Sat Dec 02 2017 19:33:01 GMT+0800",
+    "dateModified": "Sat Dec 02 2017 19:37:20 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -532,75 +532,10 @@ init <span class="token operator">=</span> jQuery<span class="token punctuation"
             <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
 
-
         <span class="token comment" spellcheck="true">// Handle HTML strings</span>
         <span class="token comment" spellcheck="true">// 1. 判断传入参数类型是否为 string</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token keyword">typeof</span> selector <span class="token operator">===</span> <span class="token string">"string"</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span> selector<span class="token punctuation">[</span> <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">"&lt;"</span> <span class="token operator">&amp;&amp;</span>
-                selector<span class="token punctuation">[</span> selector<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span> <span class="token punctuation">]</span> <span class="token operator">===</span> <span class="token string">">"</span> <span class="token operator">&amp;&amp;</span>
-                selector<span class="token punctuation">.</span>length <span class="token operator">>=</span> <span class="token number">3</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-                <span class="token comment" spellcheck="true">// Assume that strings that start and end with &lt;> are HTML and skip the regex check</span>
-                match <span class="token operator">=</span> <span class="token punctuation">[</span> <span class="token keyword">null</span><span class="token punctuation">,</span> selector<span class="token punctuation">,</span> <span class="token keyword">null</span> <span class="token punctuation">]</span><span class="token punctuation">;</span>
-
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                match <span class="token operator">=</span> rquickExpr<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span> selector <span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-
-            <span class="token comment" spellcheck="true">// Match html or make sure no context is specified for #id</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span> match <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span> match<span class="token punctuation">[</span> <span class="token number">1</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token operator">!</span>context <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-                <span class="token comment" spellcheck="true">// HANDLE: $(html) -> $(array)</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span> match<span class="token punctuation">[</span> <span class="token number">1</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    context <span class="token operator">=</span> context <span class="token keyword">instanceof</span> <span class="token class-name">jQuery</span> <span class="token operator">?</span> context<span class="token punctuation">[</span> <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token punctuation">:</span> context<span class="token punctuation">;</span>
-
-                    <span class="token comment" spellcheck="true">// Option to run scripts is true for back-compat</span>
-                    <span class="token comment" spellcheck="true">// Intentionally let the error be thrown if parseHTML is not present</span>
-                    jQuery<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">,</span> jQuery<span class="token punctuation">.</span><span class="token function">parseHTML</span><span class="token punctuation">(</span>
-                        match<span class="token punctuation">[</span> <span class="token number">1</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
-                        context <span class="token operator">&amp;&amp;</span> context<span class="token punctuation">.</span>nodeType <span class="token operator">?</span> context<span class="token punctuation">.</span>ownerDocument <span class="token operator">||</span> context <span class="token punctuation">:</span> document<span class="token punctuation">,</span>
-                        <span class="token boolean">true</span>
-                    <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                    <span class="token comment" spellcheck="true">// HANDLE: $(html, props)</span>
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span> rsingleTag<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span> match<span class="token punctuation">[</span> <span class="token number">1</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> jQuery<span class="token punctuation">.</span><span class="token function">isPlainObject</span><span class="token punctuation">(</span> context <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                        <span class="token keyword">for</span> <span class="token punctuation">(</span> match <span class="token keyword">in</span> context <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-                            <span class="token comment" spellcheck="true">// Properties of context are called as methods if possible</span>
-                            <span class="token keyword">if</span> <span class="token punctuation">(</span> jQuery<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span> <span class="token keyword">this</span><span class="token punctuation">[</span> match <span class="token punctuation">]</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">this</span><span class="token punctuation">[</span> match <span class="token punctuation">]</span><span class="token punctuation">(</span> context<span class="token punctuation">[</span> match <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                            <span class="token comment" spellcheck="true">// ...and otherwise set as attributes</span>
-                            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span> match<span class="token punctuation">,</span> context<span class="token punctuation">[</span> match <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-                            <span class="token punctuation">}</span>
-                        <span class="token punctuation">}</span>
-                    <span class="token punctuation">}</span>
-
-                    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-
-                <span class="token comment" spellcheck="true">// HANDLE: $(#id)</span>
-                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                    elem <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span> match<span class="token punctuation">[</span> <span class="token number">2</span> <span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-                    <span class="token keyword">if</span> <span class="token punctuation">(</span> elem <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-
-                        <span class="token comment" spellcheck="true">// Inject the element directly into the jQuery object</span>
-                        <span class="token keyword">this</span><span class="token punctuation">[</span> <span class="token number">0</span> <span class="token punctuation">]</span> <span class="token operator">=</span> elem<span class="token punctuation">;</span>
-                        <span class="token keyword">this</span><span class="token punctuation">.</span>length <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span>
-                    <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-
-            <span class="token comment" spellcheck="true">// HANDLE: $(expr, $(...))</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span>context <span class="token operator">||</span> context<span class="token punctuation">.</span>jquery <span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token punctuation">(</span> context <span class="token operator">||</span> root <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span> selector <span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-            <span class="token comment" spellcheck="true">// HANDLE: $(expr, context)</span>
-            <span class="token comment" spellcheck="true">// (which is just equivalent to: $(context).find(expr)</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-                <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">constructor</span><span class="token punctuation">(</span> context <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span> selector <span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">// ...</span>
 
         <span class="token comment" spellcheck="true">// HANDLE: $(DOMElement)</span>
         <span class="token comment" spellcheck="true">// 2. 如果不是 string类型，则判断是否有nodeType属性【nodeType属性是DOM元素特有的属性】</span>
@@ -617,7 +552,7 @@ init <span class="token operator">=</span> jQuery<span class="token punctuation"
                 <span class="token function">selector</span><span class="token punctuation">(</span> jQuery <span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>参考文献：<br><a href="http://blog.csdn.net/lfcss/article/details/52086823" target="_blank" rel="external">jQuery源码研究分析学习笔记</a><br><a href="http://blog.csdn.net/lihongxun945/article/details/10304285" target="_blank" rel="external">jquery 实现原理二：core.js</a></p>
 
         
