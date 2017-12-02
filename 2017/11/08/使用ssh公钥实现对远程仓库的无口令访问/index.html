@@ -17,6 +17,9 @@
         ]
     </script>
 
+    
+
+
     <!-- dns prefetch -->
     <meta http-equiv="x-dns-prefetch-control" content="on">
 
@@ -299,6 +302,15 @@
     <!-- Custom Head -->
     
 
+    <!-- 加载highlight.js -->
+    <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.2.0/styles/github.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+
+    <script>
+        // highlight
+        hljs.initHighlightingOnLoad();
+    </script>
+
 </head>
 
 
@@ -510,11 +522,9 @@
 <p>当一个主机对应多个远程仓库账户时，使用https协议 ( github、 码云、bitbucket等远程仓库都支持https协议和SSH协议 ) 进行仓库的克隆、上传时，每次都需要输入当前远程仓库账户的用户名和密码，这时候可以使用SSH协议实现对远程仓库的无口令访问，使用SSH协议需要主机生成ssh-keys文件，然后把这个ssh-keys配置到你的远程账户下方可使用</p>
 </blockquote>
 <ul>
-<li><p>在 Git Base 中运行以下命令生成本机公钥与私钥（没有git base 的先百度下载安装“git for windows”）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen</div></pre></td></tr></table></figure>
-</li>
-<li><p>找到刚才所生成的公钥（默认放在：<code>/c/Users/Administrator/.ssh/</code>文件夹下，其中<code>id_rsa</code>为私钥，<code>id_rsa.pub</code>为公钥，这里需要使用的是公钥）</p>
-</li>
+<li>在 Git Base 中运行以下命令生成本机公钥与私钥（没有git base 的先百度下载安装“git for windows”）<pre><code>ssh-keygen
+</code></pre></li>
+<li>找到刚才所生成的公钥（默认放在：<code>/c/Users/Administrator/.ssh/</code>文件夹下，其中<code>id_rsa</code>为私钥，<code>id_rsa.pub</code>为公钥，这里需要使用的是公钥）</li>
 <li>用编辑器打开公钥<code>id_rsa.pub</code>，复制里面的内容</li>
 <li>登录你的远程仓库账户（github、bitbucket、码云） -&gt; 设置（settings） -&gt; SSH公钥（SSH and GPG keys）-&gt; 添加公钥（New SSH key）</li>
 <li>在公钥（key）处粘贴刚才复制好的代码，标题（Title）可以自定义，如“company/home….”</li>
