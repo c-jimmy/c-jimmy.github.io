@@ -7,10 +7,7 @@
       <url>/2017/12/02/jQuery-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%88%E4%BA%8C%EF%BC%89%EF%BC%9AjQuery%E6%A0%B8%E5%BF%83%E5%87%BD%E6%95%B0/</url>
       <content type="html"><![CDATA[<link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet">
 
-<h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a></p>
-<table><br>    <tr><br>        <th colspan="2">类型（selector）</th><br>        <th>处理方式</th><br>    </tr><br>    <tr><br>        <td colspan="2">为空的情况</td><br>        <td>则直接返回空的jquery对象</td><br>    </tr><br>    <tr><br>        <td rowspan="4">String</td><br>        <td>单独的HTML标签</td><br>        <td>document.createElement</td><br>    </tr><br>    <tr><br>        <td>HTML字符串</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>#id</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>选择器表达式</td><br>        <td>$(…).find</td><br>    </tr><br>    <tr><br>        <td colspan="2">DOM 元素</td><br>        <td>包装成jQuery对象，直接返回</td><br>    </tr><br>    <tr><br>        <td colspan="2">函数</td><br>        <td>注册到dom ready的回调函数</td><br>    </tr><br></table> 
-
-
+<h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a><br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171202/mFK2hkgH60.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// selector: 选择器</span>
 <span class="token comment" spellcheck="true">// context: 上下文</span>
 <span class="token comment" spellcheck="true">// root: 实例[ init 内部定义的，不是我们手动从外部传入的]</span>

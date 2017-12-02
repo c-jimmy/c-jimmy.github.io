@@ -245,7 +245,7 @@ jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进�
 
     
         <meta property="article:published_time" content="Sat Dec 02 2017 19:25:50 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Dec 02 2017 19:31:04 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 02 2017 19:33:01 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -274,7 +274,7 @@ jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进�
     "mainEntityOfPage": "https://c-jimmy.github.io/2017/12/02/jQuery-源码分析（二）：jQuery核心函数/index.html",
     "headline": "jQuery-源码分析（二）：jQuery核心函数",
     "datePublished": "Sat Dec 02 2017 19:25:50 GMT+0800",
-    "dateModified": "Sat Dec 02 2017 19:31:04 GMT+0800",
+    "dateModified": "Sat Dec 02 2017 19:33:01 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -519,10 +519,7 @@ jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进�
     
         <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet">
 
-<h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a></p>
-<table><br>    <tr><br>        <th colspan="2">类型（selector）</th><br>        <th>处理方式</th><br>    </tr><br>    <tr><br>        <td colspan="2">为空的情况</td><br>        <td>则直接返回空的jquery对象</td><br>    </tr><br>    <tr><br>        <td rowspan="4">String</td><br>        <td>单独的HTML标签</td><br>        <td>document.createElement</td><br>    </tr><br>    <tr><br>        <td>HTML字符串</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>#id</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>选择器表达式</td><br>        <td>$(…).find</td><br>    </tr><br>    <tr><br>        <td colspan="2">DOM 元素</td><br>        <td>包装成jQuery对象，直接返回</td><br>    </tr><br>    <tr><br>        <td colspan="2">函数</td><br>        <td>注册到dom ready的回调函数</td><br>    </tr><br></table> 
-
-
+<h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a><br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171202/mFK2hkgH60.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// selector: 选择器</span>
 <span class="token comment" spellcheck="true">// context: 上下文</span>
 <span class="token comment" spellcheck="true">// root: 实例[ init 内部定义的，不是我们手动从外部传入的]</span>
