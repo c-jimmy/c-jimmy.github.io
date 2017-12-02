@@ -51,7 +51,9 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="theme-color" content="#0097A7">
     <meta name="author" content="C-Jimmy">
-    <meta name="description" itemprop="description" content="jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
+    <meta name="description" itemprop="description" content="
+
+jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
     <meta name="keywords" content="C-Jimmy博客,jQuery,源码分析,jQuery核心函数,jQuery.fn.init()">
 
     <!-- Import lsloader -->
@@ -236,17 +238,21 @@
     <meta property="og:type" content="blog">
     <meta property="og:title" content="jQuery-源码分析（二）：jQuery核心函数 | C-Jimmy个人小站">
     <meta property="og:image" content="https://c-jimmy.github.io/img/favicon.png" />
-    <meta property="og:description" content="jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
+    <meta property="og:description" content="
+
+jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
     <meta property="og:article:tag" content="jQuery"> <meta property="og:article:tag" content="源码分析"> <meta property="og:article:tag" content="jQuery核心函数"> <meta property="og:article:tag" content="jQuery.fn.init()"> 
 
     
         <meta property="article:published_time" content="Sat Dec 02 2017 19:25:50 GMT+0800" />
-        <meta property="article:modified_time" content="Sat Dec 02 2017 19:26:53 GMT+0800" />
+        <meta property="article:modified_time" content="Sat Dec 02 2017 19:31:04 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
     <meta name="twitter:title" content="jQuery-源码分析（二）：jQuery核心函数 | C-Jimmy个人小站">
-    <meta name="twitter:description" content="jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
+    <meta name="twitter:description" content="
+
+jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。">
     <meta name="twitter:image" content="https://c-jimmy.github.io/img/favicon.png">
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://c-jimmy.github.io" />
@@ -268,7 +274,7 @@
     "mainEntityOfPage": "https://c-jimmy.github.io/2017/12/02/jQuery-源码分析（二）：jQuery核心函数/index.html",
     "headline": "jQuery-源码分析（二）：jQuery核心函数",
     "datePublished": "Sat Dec 02 2017 19:25:50 GMT+0800",
-    "dateModified": "Sat Dec 02 2017 19:26:53 GMT+0800",
+    "dateModified": "Sat Dec 02 2017 19:31:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "C-Jimmy",
@@ -287,7 +293,9 @@
         }
     },
     "keywords": ",jQuery,源码分析,jQuery核心函数,jQuery.fn.init()C-Jimmy博客",
-    "description": "jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。",
+    "description": "
+
+jQuery.fn.init方法jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。",
 }
 </script>
 
@@ -509,7 +517,9 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a></p>
+        <link href="http://kevinburke.bitbucket.org/markdowncss/markdown.css" rel="stylesheet">
+
+<h4 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h4><p>jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><a id="more"></a></p>
 <table><br>    <tr><br>        <th colspan="2">类型（selector）</th><br>        <th>处理方式</th><br>    </tr><br>    <tr><br>        <td colspan="2">为空的情况</td><br>        <td>则直接返回空的jquery对象</td><br>    </tr><br>    <tr><br>        <td rowspan="4">String</td><br>        <td>单独的HTML标签</td><br>        <td>document.createElement</td><br>    </tr><br>    <tr><br>        <td>HTML字符串</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>#id</td><br>        <td>document.createDocumentFragment</td><br>    </tr><br>    <tr><br>        <td>选择器表达式</td><br>        <td>$(…).find</td><br>    </tr><br>    <tr><br>        <td colspan="2">DOM 元素</td><br>        <td>包装成jQuery对象，直接返回</td><br>    </tr><br>    <tr><br>        <td colspan="2">函数</td><br>        <td>注册到dom ready的回调函数</td><br>    </tr><br></table> 
 
 
