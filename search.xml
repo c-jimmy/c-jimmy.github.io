@@ -441,12 +441,6 @@ obj.m.apply(obj);   // 1
   
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[gallery]]></title>
       <url>/gallery/index.html</url>
       <content type="html"></content>
@@ -455,6 +449,12 @@ obj.m.apply(obj);   // 1
     <entry>
       <title><![CDATA[links]]></title>
       <url>/links/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     
