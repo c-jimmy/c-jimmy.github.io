@@ -9,6 +9,7 @@
 <p>本文为原创文章，转载请署名并填上原文链接</p>
 </blockquote>
 <a id="more"></a>
+<p><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171207/kJHIIkgA2C.png?imageslim" alt="mark"></p>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 这个init()方法就是jQuery 原型对象上面的init()方法，也就是负责new出一个jquery对象()的方法</span>
     init <span class="token operator">=</span> jQuery<span class="token punctuation">.</span>fn<span class="token punctuation">.</span>init <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span> selector<span class="token punctuation">,</span> context<span class="token punctuation">,</span> root <span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">// match: 定义一个match值，以供后面进行代码的走向</span>
@@ -291,11 +292,8 @@ temBlog<span class="token punctuation">.</span><span class="token function">appe
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h2><blockquote>
-<p>调用jQuery方法后，会通过jQuery.fn.init()方法进行实例化一个jQuery对象。jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。  </p>
+<p>调用jQuery方法后，会通过jQuery.fn.init()方法进行实例化一个jQuery对象。jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171207/kJHIIkgA2C.png?imageslim" alt="mark"></p>
 </blockquote>
-<table><br>    <tr><br>        <th colspan="2">类型（selector）</th><br>        <th>处理方式</th><br>        <th>比如</th><br>    </tr><br>    <tr><br>        <td colspan="2">为空的情况</td><br>        <td>则直接返回空的jquery对象</td><br>        <td>$(‘’), $(null), $(undefined), $(false), $()</td><br>    </tr><br>    <tr><br>        <td rowspan="4">String</td><br>        <td>单独的HTML标签</td><br>        <td>document.createElement</td><br>        <td>$(“&lt; div&gt;”)</td><br>    </tr><br>    <tr><br>        <td>HTML字符串</td><br>        <td>document.createDocumentFragment</td><br>        <td>$(‘&lt; li&gt;111&lt;/ li&gt;’)</td><br>    </tr><br>    <tr><br>        <td>#id</td><br>        <td>document.getElementById</td><br>        <td>$(‘#id’)</td><br>    </tr><br>    <tr><br>        <td>选择器表达式</td><br>        <td>$(…).find</td><br>        <td>$(‘#div1 div.box’)</td><br>    </tr><br>    <tr><br>        <td colspan="2">DOM 元素</td><br>        <td>包装成jQuery对象，直接返回</td><br>        <td>$(this) $(document)</td><br>    </tr><br>    <tr><br>        <td colspan="2">函数</td><br>        <td>注册到dom ready的回调函数</td><br>        <td>$(function(){})</td><br>    </tr><br></table> 
-
-
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// selector: 选择器</span>
 <span class="token comment" spellcheck="true">// context: 上下文</span>
 <span class="token comment" spellcheck="true">// root: 实例[ init 内部定义的，不是我们手动从外部传入的]</span>
