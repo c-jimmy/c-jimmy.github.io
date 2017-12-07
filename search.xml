@@ -292,7 +292,7 @@ temBlog<span class="token punctuation">.</span><span class="token function">appe
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="jQuery-fn-init方法"><a href="#jQuery-fn-init方法" class="headerlink" title="jQuery.fn.init方法"></a>jQuery.fn.init方法</h2><blockquote>
-<p>调用jQuery方法后，会通过jQuery.fn.init()方法进行实例化一个jQuery对象。jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171207/kJHIIkgA2C.png?imageslim" alt="mark"><br>可右键-&gt; 新标签打开图片 查看大图</p>
+<p>调用jQuery方法后，会通过jQuery.fn.init()方法进行实例化一个jQuery对象。jQuery.fn.init的功能是对传进来的selector参数进行分析，进行各种不同的处理，然后生成jQuery对象。<br><img src="http://oz1lum573.bkt.clouddn.com/c-jimmy/171207/kJHIIkgA2C.png?imageslim" alt="mark"><br><a href="http://oz1lum573.bkt.clouddn.com/c-jimmy/171207/kJHIIkgA2C.png?imageslim" target="_blank" rel="external">【查看大图】</a></p>
 </blockquote>
 <pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// selector: 选择器</span>
 <span class="token comment" spellcheck="true">// context: 上下文</span>
