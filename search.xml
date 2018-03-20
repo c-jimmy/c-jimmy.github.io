@@ -5,8 +5,9 @@
     <entry>
       <title><![CDATA[输入URL后，按下回车键都发生了什么]]></title>
       <url>/2018/03/20/%E8%BE%93%E5%85%A5URL%E5%90%8E%EF%BC%8C%E6%8C%89%E4%B8%8B%E5%9B%9E%E8%BD%A6%E9%94%AE%E9%83%BD%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88/</url>
-      <content type="html"><![CDATA[<h2 id="复制版本"><a href="#复制版本" class="headerlink" title="复制版本"></a>复制版本</h2><ul>
-<li><h4 id="从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）"><a href="#从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）" class="headerlink" title="从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）"></a>从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）</h4><ul>
+      <content type="html"><![CDATA[<h2 id="输入URL后，按下回车键都发生了什么"><a href="#输入URL后，按下回车键都发生了什么" class="headerlink" title="输入URL后，按下回车键都发生了什么"></a>输入URL后，按下回车键都发生了什么</h2><ul>
+<li><h4 id="从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）"><a href="#从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）" class="headerlink" title="从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）"></a>从浏览器接收url到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）</h4><a id="more"></a>
+<ul>
 <li><h5 id="多进程的浏览器"><a href="#多进程的浏览器" class="headerlink" title="多进程的浏览器"></a>多进程的浏览器</h5><ul>
 <li>浏览器是多进程的，有一个主控进程，以及每一个tab页面都会新开一个进程（某些情况下多个tab会合并进程）</li>
 <li>进程可能包括主控进程，插件进程，GPU，tab页（浏览器内核）等等。<ul>
@@ -1146,8 +1147,8 @@ obj<span class="token punctuation">.</span>m<span class="token punctuation">.</s
   
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>/about/index.html</url>
+      <title><![CDATA[gallery]]></title>
+      <url>/gallery/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -1158,8 +1159,8 @@ obj<span class="token punctuation">.</span>m<span class="token punctuation">.</s
     </entry>
     
     <entry>
-      <title><![CDATA[gallery]]></title>
-      <url>/gallery/index.html</url>
+      <title><![CDATA[about]]></title>
+      <url>/about/index.html</url>
       <content type="html"></content>
     </entry>
     
